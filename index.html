@@ -10,11 +10,16 @@
 </head>
 <body>
     <div id="app">    
+        
         <h1>Crappy Cam</h1>
+        
         <div>
             <video autoplay></video>
         </div>
         <button @click="openCamera">OPEN CAMERA</button>
+        <button @click="pauseStream">PAUSE CAMERA</button>
+        <button @click="resumeStream">RESUME CAMERA</button>
+        
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.7/dist/vue.js"></script>

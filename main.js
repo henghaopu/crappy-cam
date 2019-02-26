@@ -41,6 +41,13 @@ var vm = new Vue({
             function hasGetUserMedia() {
                 return (navigator.mediaDevices && navigator.mediaDevices.getUserMedia)
             }
+        },
+        pauseStream() {
+            // pause the stream
+            this.video.pause()
+        },
+        resumeStream() {
+            this.video.play()
         }
     }
 })
