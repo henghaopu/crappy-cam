@@ -1,7 +1,26 @@
+* {
+    font-family: 'Shadows Into Light Two', cursive;
+}
+h1 {
+    
+    font-family: 'Rock Salt', cursive;
+}
+.container {
+    text-align: center;
+}
 video {
-    background: gray;
-    border: 1px black solid;
+    background: lightgray;
+    border: 2px black solid;
+    max-width: 100%;
 }
 canvas {
-    border: 1px black solid;
+    border: 2px black solid;
+    max-width: 100%;
+}
+h1, .videoContainer, .canvasContainer {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+button {
+    margin: 0.5rem;
 }

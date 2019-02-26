@@ -5,27 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>CC</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://fonts.googleapis.com/css?family=Rock+Salt|Shadows+Into+Light+Two" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css">
-    
 </head>
 <body>
-    <div id="app">    
+    <div id="app" class="container">    
         
         <h1>Crappy Cam</h1>
         
-        <div>
+        <div class="videoContainer">
             <video autoplay></video>
         </div>
-        <button @click="openCamera">OPEN CAMERA</button>
-        <button @click="pauseVideo">PAUSE Video</button>
-        <button @click="resumeVideo">RESUME Video</button>
-        <button @click="closeCamera">CLOSE CAMERA</button>
+        <button class="btn btn btn-success" @click="openCamera">OPEN CAMERA</button>
+        <button class="btn btn btn-success" @click="pauseVideo">PAUSE VIDEO</button>
+        <button class="btn btn btn-success" @click="resumeVideo">RESUME VIDEO</button>
+        <button class="btn btn btn-success" @click="closeCamera">CLOSE CAMERA</button>
 
         <div class="canvasContainer">
             <canvas></canvas>   
         </div>
-        <button @click="takeAPhoto">TAKE A PHOTO</button>
-        
+        <button class="btn btn btn-success" @click="takeAPhoto">TAKE A PHOTO</button>
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.7/dist/vue.js"></script>
