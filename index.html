@@ -17,8 +17,14 @@
             <video autoplay></video>
         </div>
         <button @click="openCamera">OPEN CAMERA</button>
-        <button @click="pauseStream">PAUSE CAMERA</button>
-        <button @click="resumeStream">RESUME CAMERA</button>
+        <button @click="pauseVideo">PAUSE Video</button>
+        <button @click="resumeVideo">RESUME Video</button>
+        <button @click="closeCamera">CLOSE CAMERA</button>
+
+        <div class="canvasContainer">
+            <canvas></canvas>   
+        </div>
+        <button @click="takeAPhoto">TAKE A PHOTO</button>
         
     </div>
 

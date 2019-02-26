@@ -7,12 +7,15 @@ var vm = new Vue({
     data: {
         // reference to dom element
         video: null,
+        canvas: null,
         // reference to WebRTC stream
-        stream: null,
+        stream: null
+        
     },
     mounted () {
         // get dom element
         this.video = document.querySelector('video')
+        this.canvas = document.querySelector('canvas')
     },
     methods: {
         openCamera() {
@@ -42,12 +45,27 @@ var vm = new Vue({
                 return (navigator.mediaDevices && navigator.mediaDevices.getUserMedia)
             }
         },
-        pauseStream() {
+        pauseVideo() {
             // pause the stream
             this.video.pause()
         },
-        resumeStream() {
+        resumeVideo() {
             this.video.play()
+        },
+        closeCamera() {
+            // stop both video and audio
+            this.stream.getTracks().forEach(track => {
+                track.stop()
+            })
+            // stop only audio
+            // this.streamData.getAudioTracks()[0].stop();
+            // stop only audio 
+            // this.streamData.getVideoTracks()[0].stop();
+        },
+        takeAPhoto() {
+            this.canvas.width = this.video.videoWidth
+            this.canvas.height = this.video.videoHeight
+            this.canvas.getContext('2d').drawImage(this.video, 0, 0)
         }
     }
 })

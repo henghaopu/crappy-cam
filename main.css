@@ -2,3 +2,6 @@ video {
     background: gray;
     border: 1px black solid;
 }
+canvas {
+    border: 1px black solid;
+}
