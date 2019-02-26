@@ -18,13 +18,17 @@ var vm = new Vue({
         this.canvas = document.querySelector('canvas')
     },
     methods: {
-        openCamera() {
+        async openCamera() {
             
             if (hasGetUserMedia()) {
                 // The constraints parameter is a MediaStreamConstraints object with two members: video and audio
                 const constraints = {
                     video: true
                 }
+                const stream = await navigator.mediaDevices.getUserMedia(constraints)
+                this.stream = stream
+                this.video.srcObject = stream
+                /*
                 // use WebRTC - getUserMedia() API to access camera
                 navigator.mediaDevices.getUserMedia(constraints)
                 .then(stream => {
@@ -36,7 +40,7 @@ var vm = new Vue({
                 .catch(err => {
                     console.log(err)
                 })
-            
+                */
             } else {
                 alert('getUserMedia() is not supported by your browser')
             }
